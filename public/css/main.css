@@ -1,0 +1,34 @@
+body {
+  font-family: "Microsoft YaHei", Arial, Tahoma;
+}
+.container {
+  padding-top: 20px;
+}
+.info-box {
+  padding: 0 10px;
+  height: 70px;
+  border-bottom: dashed 1px #CCCCCC;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+.info {
+  float: left;
+  line-height: 70px;
+  color: #353535;
+  font-size: 17px;
+}
+.timestamp {
+  color: #999999;
+  font-style: italic;
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+.highlightingText {
+  color: #ffffff;
+  background: #6699cc;
+  border-radius: 2px;
+}
