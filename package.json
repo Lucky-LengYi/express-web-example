@@ -1,0 +1,10 @@
+{
+  "name": "express-web-example",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.13.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
