@@ -2,7 +2,9 @@ var express = require('express');
 var app = express();
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
-var bookmarks = require('./bookmarks.json');
+var bookmarksHelper = require('./bookmarks-helper');
+
+var bookmarks = bookmarksHelper();
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -17,6 +19,18 @@ app.get('/', function(req, res) {
 });
 
 app.get('/bookmarks', function(req, res) {
+  res.send(bookmarks);
+});
+
+app.delete('/bookmarks', function (req, res) {
+  var id = parseInt(req.query.id);
+  
+  bookmarks.forEach(function (item, i) {
+    if (id === item.id) {
+      bookmarks.splice(i, 1);
+    }
+  });
+
   res.send(bookmarks);
 });
 
