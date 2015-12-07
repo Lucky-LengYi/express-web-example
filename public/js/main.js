@@ -24,7 +24,8 @@ $(function() {
   var bookmarks;
 
   $.ajax({
-    url: "bookmarks.json",
+    method: "get",
+    url: "/bookmarks",
   }).done(function(data) {
     bookmarks = data;
     insertItems(data);
