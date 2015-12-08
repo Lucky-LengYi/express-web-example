@@ -32,3 +32,17 @@ body {
   background: #6699cc;
   border-radius: 2px;
 }
+.del-button {
+  float: right;
+  margin-top: 10px;
+}
+.search-count {
+  position: absolute;
+  right: 15px;
+  top: 7px;
+  color: #999999;
+  font-style: italic;
+}
+.control {
+  position: relative;
+}
