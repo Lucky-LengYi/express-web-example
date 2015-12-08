@@ -22,9 +22,32 @@ app.get('/bookmarks', function(req, res) {
   res.send(bookmarks);
 });
 
+app.post('/bookmark', function (req, res) {
+  var tmp = {};
+
+  var randomNum;
+  var isExist = false;
+
+  do {
+    randomNum = parseInt(Math.random() * 1000);
+    bookmarks.forEach(function (item) {
+      if (randomNum === item.id){
+        isExist = true;
+      }
+    });
+  } while (isExist);
+
+  tmp.id = randomNum;
+  tmp.title = req.body.bookmarkName;
+  tmp.address = req.body.bookmarkAddress;
+  tmp.created = Date.parse(new Date()) / 1000;
+  bookmarks.push(tmp);
+  res.send(bookmarks);
+});
+
 app.delete('/bookmarks', function (req, res) {
   var id = parseInt(req.query.id);
-  
+
   bookmarks.forEach(function (item, i) {
     if (id === item.id) {
       bookmarks.splice(i, 1);
